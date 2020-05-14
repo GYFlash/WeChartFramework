@@ -48,7 +48,10 @@ Page({
     App.globalData.setUserInfo(e.detail.userInfo);
     App.globalData.setUserId('user_id_temp');
     App.globalData.setToken('user_token_temp');
-    // App.globalData.getUserId()
+    App.request.setUser({
+      id: 'user_id_temp',
+      token: 'user_token_temp'
+    })
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true

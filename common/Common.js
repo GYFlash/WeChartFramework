@@ -10,5 +10,5 @@ export default class Common {
     /**
      * 用户是否成功登陆
      */
-    userDidLogin () {}
+    // userDidLogin () {}
 }

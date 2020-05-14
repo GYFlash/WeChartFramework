@@ -1,14 +1,11 @@
-// name: HttpRequest.js
+// name: HTTPRequest.js
 // project: WechartFramework
 // author: 区区电脑
 // e-mail: 1573580882@qq.com
 // date: 2020-05-13 23:29
 // ...
 
-import {
-    Host,
-    Apis
-} from "./config";
+import { Host, Apis } from "./config";
 
 export default class HTTPRequest {
     constructor () {
@@ -19,7 +16,7 @@ export default class HTTPRequest {
      * 发起请求
      * @param {*} options 
      */
-    async start (options) {
+    start (options) {
         return new Promise((resolve, reject) => {
             let apiKey = options.apiKey; // api 键名
             let api = Apis[apiKey]; // api 对象
