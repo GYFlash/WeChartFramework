@@ -10,7 +10,7 @@ import {
     Apis
 } from "./config";
 
-export default class HttpRequest {
+export default class HTTPRequest {
     constructor () {
         this._token = null;
         this._userId = null;

@@ -1,6 +1,5 @@
 //app.js
-
-import HttpRequest from './common/HttpRequest';
+import HTTPRequest from './common/HTTPRequest';
 import Common from './common/Common';
 import GlobalData from './common/GlobalData';
 import GEvent from './common/GEvent';
@@ -12,12 +11,11 @@ App({
   event: null,
   onLaunch: function () {
     this.globalData = new GlobalData();
-    this.request = new HttpRequest();
+    this.request = new HTTPRequest();
     this.event = new GEvent();
     this.common = new Common();
 
     this.common.userDidLogin = () => {
-      console.log(this.globalData.getUserId())
       return this.globalData.getUserId() && this.globalData.getToken();
     }
 
