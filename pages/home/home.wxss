@@ -1,0 +1,13 @@
+/* pages/home/home.wxss */
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin: 20rpx 0;
+}

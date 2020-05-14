@@ -1,0 +1,8 @@
+<!--pages/home/home.wxml-->
+<view class="flex">
+  <text>首页</text>
+  <image src="{{userInfo.avatarUrl}}"></image>
+  <text>{{userInfo.nickName}}</text>
+  <view style="height: 20rpx;"></view>
+  <button bindtap="clearCache">清除缓存</button>
+</view>
