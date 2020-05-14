@@ -38,7 +38,10 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.setUserInfo(res.userInfo)
+
+              this.globalData.setUserInfo(res.userInfo);
+              this.globalData.setUserId('user_id_temp');
+              this.globalData.setToken('user_token_temp');
               this.request.setUser({
                 id: 'user_id_temp',
                 token: 'user_token_temp'
