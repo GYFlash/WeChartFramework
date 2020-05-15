@@ -36,29 +36,31 @@ Page({
   },
   // 微信授权成功
   hideAuthCard (info) {
+    let __this = this;
     if (!info) {
-      this.setData({
+      __this.setData({
         userInfo: App.globalData.getUserInfo(),
         hasUserInfo: true,
-        isShowAuthCard: false
       })
+      setTimeout(() => {
+        __this.setData({
+          isShowAuthCard: false
+        })
+      }, 1000)
       return;
     }
-    // 用户登录
-    let __this = this;
-    let res = {
-      userInfo: info
-    };
 
-    App.setUserInfo(res.userInfo)
-    this.setData({
-      userInfo: res.userInfo,
-      hasUserInfo: true,
-    })
-    setTimeout(() => {
-      __this.setData({
-        isShowAuthCard: false
+    // 用户登录
+    App.userLogin(info).then(res => {
+      this.setData({
+        userInfo: res.userInfo,
+        hasUserInfo: true,
       })
-    }, 1000)
+      setTimeout(() => {
+        __this.setData({
+          isShowAuthCard: false
+        })
+      }, 1000)
+    })
   }
 })

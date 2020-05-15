@@ -33,7 +33,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {              
-              this.setUserInfo(res.userInfo);
+              this.userLogin(res.userInfo);
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -55,5 +55,15 @@ App({
       id: 'user_id_temp',
       token: 'user_token_temp'
     })
+  },
+  // 用户登录
+  userLogin (info) {
+    console.log(info)
+    this.setUserInfo(info)
+    return new Promise((resolve, reject) => {
+      // 发起网络请求，进行登录
+      this.setUserInfo(info)
+      resolve({userInfo: info})
+    });
   }
 })
