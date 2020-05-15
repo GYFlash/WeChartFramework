@@ -1,13 +1,13 @@
 <!--pages/mine/mine.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+<!-- 授权卡片 -->
+<view class="wxAuth" style="{{isShowAuthCard ? 'top: 100rpx;' : 'top: -600rpx;'}}">
+  <button class="authButton {{!hasUserInfo && canIUse ? '' : 'transform-scale'}}" open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <image class="userinfo-avatar avatar {{!hasUserInfo && canIUse ? 'transform-scale' : ''}}" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <view class="nickname {{!hasUserInfo && canIUse ? 'transform-scale' : ''}}">{{userInfo.nickName}}</view>
+</view>
+
+<!-- 个人中心 -->
+<view wx:if="{{!isShowAuthCard}}" class="container">
+  个人中心
 </view>

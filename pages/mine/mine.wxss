@@ -1,21 +1,46 @@
 /* pages/mine/mine.wxss */
-.userinfo {
+
+
+.wxAuth {
+  box-sizing: border-box;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0 0 8rpx 0rpx rgba(0, 0, 0, 0.5);
+  height: 400rpx;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: fixed;
+  top: 100rpx;
+  left: 30rpx;
+  right: 30rpx;
+  z-index: 100;
 }
-
-.userinfo-avatar {
+.wxAuth:active {
+  box-shadow: 0 0 20rpx 0rpx rgba(0, 0, 0, 0.5);
+}
+.wxAuth .authButton {
+  transition: all 0.5s ease;
+  transform: scale(1) translateY(100rpx);
+}
+.wxAuth .avatar {
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+  transition: all 0.5s ease;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.transform-scale {
+  transform: scale(0) translateY(-100rpx) !important;
 }
-
-.usermotto {
-  margin-top: 200px;
+.wxAuth .nickname {
+  padding: 40rpx 0;
+  transition: all 0.5s ease;
+}
+.container {
+  text-align: center;
 }

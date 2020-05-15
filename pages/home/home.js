@@ -21,10 +21,12 @@ Page({
    */
   onLoad: function (options) {
     if (App.common.userDidLogin()) {
+      // 用户已登录，执行业务逻辑
       this.setData({
         userInfo: App.globalData.getUserInfo()
       })
     } else {
+      // 用户未登录，前往个人中心进行授权
       wx.navigateTo({
         url: '/pages/mine/mine',
       })
